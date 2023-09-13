@@ -1,6 +1,17 @@
-import React from 'react';
+import React from "react";
 
-export function ReactIcon({ w, h }) {
+import { ReactSVG } from "react";
+
+interface ReactIconProps {
+  w: number;
+  h: number;
+}
+
+type ProjectIcons = {
+  [key: string]: (props: ReactIconProps) => JSX.Element;
+};
+
+export function ReactIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +40,7 @@ export function ReactIcon({ w, h }) {
   );
 }
 
-export function VueIcon({ w, h }) {
+export function VueIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +72,7 @@ export function VueIcon({ w, h }) {
   );
 }
 
-export function SvelteIcon({ w, h }) {
+export function SvelteIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +92,7 @@ export function SvelteIcon({ w, h }) {
   );
 }
 
-export function NextIcon({ w, h }) {
+export function NextIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +116,7 @@ export function NextIcon({ w, h }) {
   );
 }
 
-export function NuxtIcon({ w, h }) {
+export function NuxtIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +141,7 @@ export function NuxtIcon({ w, h }) {
   );
 }
 
-export function GatsbyIcon({ w, h }) {
+export function GatsbyIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +158,7 @@ export function GatsbyIcon({ w, h }) {
   );
 }
 
-export function StarIcon({ w, h }) {
+export function StarIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +182,7 @@ export function StarIcon({ w, h }) {
   );
 }
 
-export function WatchIcon({ w, h }) {
+export function WatchIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +203,7 @@ export function WatchIcon({ w, h }) {
   );
 }
 
-export function BugIcon({ w, h }) {
+export function BugIcon({ w, h }: ReactIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -243,7 +254,7 @@ export function GithubIcon() {
   );
 }
 
-export const projectIcons = {
+export const projectIcons: ProjectIcons = {
   react: ReactIcon,
   vue: VueIcon,
   svelte: SvelteIcon,
